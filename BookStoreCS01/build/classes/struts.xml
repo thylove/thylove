@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="p1" extends="struts-default">
+	
+		<!-- 登录 -->
+		<action name="login" class = "cn.thylove.action.UserAction" method = "login">
+			<result>/index.jsp</result>
+			<result name = "error">/error.jsp</result>
+		</action>
+		
+		<!-- 注册 -->
+		<action name="register" class="cn.thylove.action.UserAction" method = "register">
+			<result>/index.jsp</result>
+			<result name = "error">/error.jsp</result>
+		</action>
+
+		<!-- 修改密码 -->
+		<action name="alterPwd" class="cn.thylove.action.UserAction" method = "alterPwdLogin">
+			<result>/alterPwd.jsp</result>
+			<result name = "error">/error.jsp</result>
+		</action>
+		<action name="modifyPwd" class="cn.thylove.action.UserAction" method = "modifyPwd">
+			<result>/index.jsp</result>
+			<result name = "error">/error.jsp</result>
+		</action>
+		
+		<!-- 搜索用户 -->
+		<action name = "searchUser" class = "cn.thylove.action.UserAction" method="searchUser">
+			<result>/searchResult.jsp</result>
+			<result name = "error">/error.jsp</result>
+		</action>
+		
+		<!-- 删除用户 -->
+		<action name="deleteUser" class = "cn.thylove.action.UserAction" method="deleteUser">
+			<result>/index.jsp</result>
+			<result name = "error">/error.jsp</result>
+		</action>
+		<!-- 当用户请求不存的action时，让它跳到index页面  -->
+		<action name="*">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+</struts>
+

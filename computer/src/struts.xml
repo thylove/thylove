@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+	
+<struts>
+	<package name="p1" extends="struts-default">
+		<result-types>
+	     	<result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+		</result-types>
+		<!-- 登录 -->
+		<!-- UsersAction -->
+		<action name="login" class = "cn.thylove.action.UsersAction" method = "login">
+			<result>/jsp/main.jsp</result>
+			<result name = "error">/index.jsp</result>
+		</action>
+		<!-- 注册 -->
+		<action name="register" class = "cn.thylove.action.UsersAction" method = "register">
+			<result>../index.jsp</result>
+			<result name = "error">./register.jsp</result>
+		</action>
+		<action name="uploadImg"  class = "cn.thylove.action.UsersAction" method = "uploadImg">
+			<result>/jsp/success.jsp</result>
+			<result>/jsp/error.jsp</result>
+		</action>
+		<!-- ComputerAction -->
+		<action name = "addComputer" class = "cn.thylove.action.ComputerAction" method = "addComputer">
+			<result>/jsp/main.jsp</result>
+			<result name = "error">/jsp/error.jsp</result>
+		</action>
+		<action name = "showComputer" class = "cn.thylove.action.ComputerAction" method = "showComputer">
+			<result>/jsp/showComputer.jsp</result>
+			<result name = "error">/jsp/error.jsp</result>
+		</action>
+		<action name = "deleteComputer" class = "cn.thylove.action.ComputerAction" method = "deleteComputer">
+			<result>/jsp/main.jsp</result>
+			<result name = "error">/jsp/error.jsp</result>
+		</action>
+		<action name = "alterComputer" class = "cn.thylove.action.ComputerAction" method = "alterComputer">
+			<result>/jsp/alterComputer.jsp</result>
+			<result name = "error">/jsp/error.jsp</result>
+		</action>
+		<action name = "alterComputerRs" class = "cn.thylove.action.ComputerAction" method = "alterComputerRs">
+			<result>/jsp/main.jsp</result>
+			<result name = "error">/jsp/error.jsp</result>
+		</action>
+		<!-- <action name = "saleProduct" class = "cn.thylove.action.ComputerAction" method = "saleProduct">
+			<result >/jsp/saleComputer.jsp</result>
+			<result name = "error">/jsp/error.jsp</result>
+		</action> -->
+ 		<action name = "saleProduct1" class = "cn.thylove.action.ComputerAction" method = "saleProduct">
+			<result type="json">
+                <param name="root">prosJsonStr</param>
+            </result>
+		</action>
+		<action name = "saleRe" class = "cn.thylove.action.SalesRecordAction" method = "saleRe">
+			<result>/jsp/main.jsp</result>
+			<result name = "error">/jsp/error.jsp</result>
+		</action>
+		<action name = "saleRecord" class = "cn.thylove.action.SalesRecordAction" method = "saleRecord">
+			<result>/jsp/computerSalesRecord.jsp</result>
+			<result name = "error">/jsp/error.jsp</result>
+		</action>
+ 		<action name = "salesRecordComputer" class = "cn.thylove.action.SalesRecordAction" method = "salesRecordComputer">
+			<result type="json">
+                <param name="root">salesRecordJson</param>
+            </result>
+		</action>
+ 		<action name = "storeID" class = "cn.thylove.action.StoreAction" method = "storeID">
+			<result type="json">
+                <param name="root">storesJsonArray</param>
+            </result>
+		</action>
+		<action name = "addTransfer" class = "cn.thylove.action.TransferAction" method = "addTransfer">
+			<result>/jsp/main.jsp</result>
+			<result name = "error">/jsp/error.jsp</result>
+		</action>
+		<action name = "showTransferRecord" class = "cn.thylove.action.TransferAction" method = "showTransferRecord">
+			<result>/jsp/showTransferRecord.jsp</result>
+			<result name = "error">/jsp/error.jsp</result>
+		</action>
+	</package>
+
+
+</struts>
