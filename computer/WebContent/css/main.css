@@ -1,0 +1,451 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+html, body{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	flex-direction: column;
+}
+
+/* 管理员信息 */
+#wrapper {
+	width: 100%;
+	height: 60px;
+	background-color: #ccc;
+	border-bottom: 1px solid #fefefe;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+}
+#wrapper #panelBody .gly{
+	font-size: 24px;
+	color: #f40;
+	height: 60px;
+	line-height: 60px;
+	display: inline-block;
+	margin-left: 400px;
+}
+#wrapper .tal {
+	float: left;
+	margin-left: 20px;
+	font-size: 24px;
+	height: 60px;
+	line-height: 60px;
+	color: #f40;
+}
+.mark {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	background-color: #fff;
+	border-radius: 50%;
+	position: relative;
+	margin: 10px;
+	overflow: hidden;
+}
+.username {
+	cursor: pointer;
+}
+.delico {
+	background-color: #ccc;
+	height: 200px;
+	width: 300px;
+	border: 1px solid #fefefe;
+	border-top: none;
+	/* display: inline-block; */
+	position: absolute;
+	top: 60px;
+	left: 20px;
+	display: none;
+	z-index: 1;
+}
+
+
+
+
+#wrapper .exitico {
+	float: right;
+	margin: 20px;
+	/* width: 300px;	 */
+}
+#wrapper .exitico a{
+	display: inline-block;
+	width: 70px;
+}
+#wrapper .exitico a span {
+	background: url(../img/off.png);
+	background-size: 100%;
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	margin-right: -40px;
+}
+#wrapper .exitico a i {
+	font-style: normal;
+	margin-left:45px;
+    vertical-align: 4px;
+    color: #123;
+}
+
+
+.delico:haver{
+	display: inline-block;
+}
+
+/* 主题部分 */
+.main {
+	position: absolute; 
+	width: 100%;
+	height: calc(100% - 60px);
+ 	background-color: #fcc;
+	top: 60px;
+}
+.main .main-left {
+	width: 15%;
+	 height: 100%;
+	/*margin-top: 10px;*/
+	background-color: #fff;
+	float: left;
+} 
+.nav-list {
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+}
+.nav-list h3 {
+	position: relative;
+	margin: 0;
+	padding: 10px 20px;
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: normal;
+	color: #fff;
+	background-color: #333;
+	border-top: 1px solid #ccc;
+	/*出现小手*/
+	cursor: pointer;
+}
+.nav-list h3:hover {
+	background-color: #222;
+}
+.nav-list span {
+	position: absolute;
+	right: 20px; 
+	top:14px;
+	width: 12px;
+	height: 12px;
+	background: url("../img/of.png") no-repeat;
+}
+.nav-list h3.open span {
+	background: url("../img/on.png") no-repeat;
+}
+.nav-list ul {
+	/*让ul隐藏*/
+	display: none;
+}
+.nav-list li a {
+	display: block;
+	padding: 10px 20px;
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	border-bottom: none;
+	color: #333;
+	font-size: 14px;
+}
+.nav-list li a:hover {
+	background-color: #ccc;
+}
+
+.main .main-right {
+	width: 75%;
+	background-color: transparent;
+	float: left;
+	margin-left: 5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 100%;
+	flex-direction: column;
+}
+.main .main-right span {
+	
+} 
+.main::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.title {
+	float: left;
+	text-align: center;
+	margin: 30px auto;
+	width: 85%;
+}
+.actionMessage span{
+	
+	display: none;
+	width: 0;
+	height: 0;
+}
+/*--------------*/
+.container {
+	font-size: 60px;
+	font-weight: normal;
+	/* text-transform: uppercase; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 50px 0;
+	width: 100%;
+	overflow: hidden;
+	margin-top: -150px;
+}
+svg {
+	position: absolute;
+	width: 85%;
+	height: 300px;
+}
+.text {
+	fill: none;
+	stroke-width: 2;
+	stroke-dasharray: 0 240;
+	stroke-dashoffset: 0; 
+}
+.text:nth-child(4n + 1) {
+	stroke: rgb(39, 135, 238);
+	animation: text1 4s ease-in-out forwards;
+}
+.text:nth-child(4n + 2) {
+	stroke: rgb(47, 169, 92);
+	animation: text2 4s ease-in-out forwards;
+}
+.text:nth-child(4n + 3) {
+	stroke: rgb(00, 47, 250);
+	animation: text3 4s ease-in-out forwards;
+}
+.text:nth-child(4n + 4) {
+	stroke: rgb(235, 61, 50);
+	animation: text4 4s ease-in-out forwards;
+}
+@keyframes text1 {
+	100% {
+		stroke-dashoffset: 1000;
+		stroke-dasharray: 60 180;
+	}
+}
+@keyframes text2 {
+	100% {
+		stroke-dashoffset: 1060;
+		stroke-dasharray: 60 180; 
+	}
+}
+@keyframes text3 {
+	100% {
+		stroke-dashoffset: 1120;
+		stroke-dasharray: 60 180;
+	}
+}
+@keyframes text4 {
+	100% {
+		stroke-dashoffset: 1180;
+		stroke-dasharray: 60 180;
+	}
+}
+/*--------------*/
+
+/*----------添加商品------*/
+.addcomputer {
+	padding: 50px;
+	margin-top: -100px;
+}
+.addcomputer table tr td:first-child {
+	text-align: right;
+}
+.addcomputer tr {
+	padding: 20px 0;
+}
+.addcomputer tr td {
+	margin: 20px;
+	font-size: 20px;
+}
+table caption {
+	font-size: 36px;
+	color: #f40;
+	font-weight: bolder;
+	margin-bottom: 20px;
+}
+.addcomputer tr td label {
+	font-size: 20px;
+	
+}
+.addcomputer tr td.tdInput label {
+	font-size: 20px;
+	vertical-align: 12px;
+}
+.addcomputer tr td.tdInput input {
+	width: 20px;
+}
+.addcomputer tr td .img {
+	border: none;
+	
+}
+.addcomputer tr td input {
+	margin:5px 10px;
+	width: 250px;
+	height: 40px;
+	font-size: 20px;
+	line-height: 40px;
+	border: 1px solid #000;
+	padding: 0 10px;
+}
+.addcomputer td.btn p {
+	text-align: center;
+}
+.addcomputer td.btn input {
+	padding: 0;
+	width: 100px;
+	height: 45px;
+	border-radius: 46px;
+	background-color: #fff; 
+	outline: none;
+	
+}
+.addcomputer td.btn input:hover {
+	background-color: #CCC;
+	cursor: pointer;
+}
+
+/*-------展示商品-----------*/
+.showComputer {
+	width: 100%;
+	height: 100%;
+	background-color: #ffc;
+}
+.showComputer table {
+	table-layout: fixed;
+	border-collapse: collapse;
+	margin: 0 auto;
+	width: 921px;
+} 
+.showComputer table tr {
+	height: 60px;
+}
+.showComputer table td {
+	padding: 0 8px;
+	
+}
+
+.showComputer table td.proNo {
+	width: 60px;
+	
+}
+.showComputer table td.storageTime{
+	width: 110px;
+	word-break:keep-all;/* 不换行 */
+	white-space:nowrap;/* 不换行 */
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow: ellipsis; /* for IE */
+	
+}
+.showComputer table td.proImg {
+	overflow: hidden;
+	padding: 0;
+	
+}
+.showComputer table td img {
+	height: 60px;
+	text-align: center;
+	margin: 5px auto;
+}
+
+/*----------alterComputer--------------*/
+.alterComputerImg {
+	text-align: left;
+	
+}
+.alterComputerImg img {
+	height: 80px;
+	margin-left: 10px;
+}
+.alterComputerImg #proImg {
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
+
+.alterProNum input {
+	background-color: #fff;
+}
+.proimg {
+	height: 60px;
+	width: 200px;
+}
+.proimg img {
+	height: 60px;
+	display: none;
+}
+
+
+/*----------调拨单----------*/
+.transferIn {
+	margin-top:-80px;
+}
+.transferIn table caption {
+	font-weight: bold;
+	font-size: 28px;
+	color: #000;
+}
+.transferIn table{
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	border-collapse:collapse;
+}
+.transferIn table td {
+	border-bottom: 1px solid #000;
+	border-left: 1px solid #000;
+	width: 100px;
+	height: 40px;
+	
+}
+.transferIn table tr:first-child {
+	height: 60px;
+}
+.transferIn table tr:last-child {
+	height: 60px;
+}
+.transferIn table tr td:first-child {
+	border-left: none;
+	width: 150px;
+}
+.transferIn table tr td:last-child {
+	width: 350px;
+	text-align: left;
+	padding: 0 25px;
+	
+}
+.transferIn table td em {
+	font-style: normal;
+	font-size: 24px;
+	font-weight: bolder;
+}
+.transferIn table tr.proImg td {
+	height: 80px;
+}
+.transferIn .check {
+	display: inline-block;
+	margin-top: 20px;
+	font-size: 18px;
+}
+.transferIn .check span {
+	display: inline-block;
+	border-bottom: 1px solid #000;
+	padding: 0px 10px 1px 20px;
+	margin-left: -10px;
+	
+} 
